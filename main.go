@@ -19,7 +19,7 @@ type Exporter struct {
 	info                  *prometheus.GaugeVec
 	deviceCount           prometheus.Gauge
 	temperatures          *prometheus.GaugeVec
-	deviceInfo            *prometheus.GaugeVecdi
+	deviceInfo            *prometheus.GaugeVec
 	powerUsage            *prometheus.GaugeVec
 	powerUsageAverage     *prometheus.GaugeVec
 	memoryTotal           *prometheus.GaugeVec
