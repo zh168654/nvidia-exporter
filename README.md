@@ -29,16 +29,19 @@ spec:
         - name: nvidia-exporter
           securityContext:
             privileged: true
-          image: bugroger/nvidia-exporter:latest
+          image: zh168654/nvidia-exporter:0.1
           ports:
-            - containerPort: 9401 
+            - containerPort: 9401
+          env:
+            - name: LD_LIBRARY_PATH
+              value: /usr/local/nvidia
           volumeMounts:
             - mountPath: /usr/local/nvidia
               name: nvidia 
       volumes:
         - name: nvidia
           hostPath:
-            path: /opt/nvidia/current
+            path: /usr/lib64/nvidia
 ---
 apiVersion: v1
 kind: Service
